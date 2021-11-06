@@ -44,12 +44,12 @@ class UpdateDeleteCelebrityActivity : AppCompatActivity() {
         Backbtn = findViewById(R.id.UpDelBackbtn)
 
         Deletebtn.setOnClickListener {
-            DeleteAlert()
+           // DeleteAlert()
         }
         Updatebtn.setOnClickListener {
             if(NameET.text.isNotEmpty() && Taboo1ET.text.isNotEmpty() &&
                 Taboo2ET.text.isNotEmpty() && Taboo3ET.text.isNotEmpty()){
-                UpdateAlert()
+                //UpdateAlert()
             }else{
                 Toast.makeText(this, "One or more fields is empty", Toast.LENGTH_LONG).show()
             }
@@ -86,7 +86,7 @@ class UpdateDeleteCelebrityActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateCelebrity(){
+    /*private fun updateCelebrity(){
         progressDialog.show()
 
         apiInterface.updateCelebrity(
@@ -162,6 +162,6 @@ class UpdateDeleteCelebrityActivity : AppCompatActivity() {
         val alert = dialogBuilder.create()
         alert.setTitle("Caution")
         alert.show()
-    }
+    }*/
 
 }//end class

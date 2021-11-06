@@ -41,7 +41,7 @@ class AddCelebrityActivity : AppCompatActivity() {
         Addbtn.setOnClickListener {
             if(NameET.text.isNotEmpty() && Taboo1ET.text.isNotEmpty() &&
                 Taboo2ET.text.isNotEmpty() && Taboo3ET.text.isNotEmpty()){
-                addCelebrity()
+                //addCelebrity()
             }else{
                 Toast.makeText(this, "One or more fields is empty", Toast.LENGTH_LONG).show()
             }
@@ -52,7 +52,7 @@ class AddCelebrityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 }//end oncreate
-    private fun addCelebrity(){
+   /* private fun addCelebrity(){
         progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Please Wait")
         progressDialog.show()
@@ -60,12 +60,12 @@ class AddCelebrityActivity : AppCompatActivity() {
         apiInterface.addCelebrity(
 
             Celebrity(
-                NameET.text.toString().capitalize(),
-                Taboo1ET.text.toString(),
-                Taboo2ET.text.toString(),
-                Taboo3ET.text.toString(),
-                0
-            )
+                //NameET.text.toString().capitalize(),
+               //Taboo1ET.text.toString(),
+                //Taboo2ET.text.toString(),
+                //Taboo3ET.text.toString(),
+                //0
+            //)
         ).enqueue(object: Callback<Celebrity> {
             override fun onResponse(call: Call<Celebrity>, response: Response<Celebrity>) {
                 progressDialog.dismiss()
@@ -82,6 +82,6 @@ class AddCelebrityActivity : AppCompatActivity() {
                 Toast.makeText(this@AddCelebrityActivity, "Unable to get data", Toast.LENGTH_LONG).show()
             }
         })
-    }
+    }*/
 
 }//end class

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.headsupprep.Celebrity
 import com.example.headsupprep.databinding.CelebrityItemRowBinding
 
-class RcyclerViewAdapter(private var celebrities: ArrayList<Celebrity>): RecyclerView.Adapter<RcyclerViewAdapter.ItemViewHolder>(){
+class RcyclerViewAdapter(private val activity: Data,private var celebrities: ArrayList<Celebrity>): RecyclerView.Adapter<RcyclerViewAdapter.ItemViewHolder>(){
 
     class ItemViewHolder(val binding: CelebrityItemRowBinding):RecyclerView.ViewHolder(binding.root)
 
@@ -20,10 +20,9 @@ class RcyclerViewAdapter(private var celebrities: ArrayList<Celebrity>): Recycle
         val celebrity = celebrities[position]
 
         holder.binding.apply {
-            NameTV.text = celebrity.name
-            Taboo1TV.text = celebrity.taboo1
-            Taboo2TV.text = celebrity.taboo2
-            Taboo3TV.text = celebrity.taboo3
+            tvCelebrity.text = "${celebrity.name} - ${celebrity.taboo1} - ${celebrity.taboo2} - ${celebrity.taboo3}"
+            tvCelebrity.setOnClickListener { activity.updateCelebrity(celebrity) }
+            btDeleteCelebrity.setOnClickListener { activity.deleteCelebrity(celebrity) }
         }
     }
 
